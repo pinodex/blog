@@ -1,0 +1,15 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": "2368"
+    },
+    "storage": {
+        "active": "s3"
+    },
+    "mail": {
+        "transport": "SMTP",
+        "options": {
+            "service": "SES"
+        }
+    }
+}

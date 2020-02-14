@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    ghost:
+        build: ghost
+        restart: unless-stopped
+        volumes:
+            - ./ghost/config.json:/var/lib/ghost/config.production.json:ro
+        environment:
+            - url=${URL}
+            - database__client=mysql
+            - database__connection__host=${DB_HOST}
+            - database__connection__user=${DB_USERNAME}
+            - database__connection__password=${DB_PASSWORD}
+            - database__connection__database=${DB_NAME}
+            - storage__s3__accessKeyId=${S3_ACCESS_KEY_ID}
+            - storage__s3__secretAccessKey=${S3_SECRET_ACCESS_KEY}
+            - storage__s3__region=${S3_REGION}
+            - storage__s3__bucket=${S3_BUCKET}
+            - storage__s3__pathPrefix=${S3_PATH_PREFIX}
+            - mail__from=${MAIL_FROM}
+            - mail__options__host=${MAIL_HOST}
+            - mail__options__port=${MAIL_PORT}
+            - mail__options__auth__user=${MAIL_USERNAME}
+            - mail__options__auth__pass=${MAIL_PASSWORD}
