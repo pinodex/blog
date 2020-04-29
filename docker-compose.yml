@@ -18,6 +18,7 @@ services:
             - storage__s3__region=${S3_REGION}
             - storage__s3__bucket=${S3_BUCKET}
             - storage__s3__pathPrefix=${S3_PATH_PREFIX}
+            - storage__s3__assetHost=${S3_ASSET_HOST}
             - mail__from=${MAIL_FROM}
             - mail__options__host=${MAIL_HOST}
             - mail__options__port=${MAIL_PORT}
