@@ -1,4 +1,4 @@
-FROM ghost:3.13.3-alpine
+FROM ghost:3.35.5-alpine
 
 ENV NODE_ENV production
 
